@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+  variables:
+    commitID: "sh git log --pretty=format:%h"
+    versionjar: join [target/springbootdemo-0.0.1-SNAPSHOT, commitID, .jar] 
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean install
+      
+cache:
+  paths:
+    - '/root/.m2/**/*'
+
+artifacts:
+  discard-paths: yes
+  files:
+    - versionjar
+    - appspec.yml
