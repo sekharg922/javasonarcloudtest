@@ -28,6 +28,6 @@ else
     echo "Completed installing Node "
 fi
 
-sduo rm -rf /home/ec2-user/simple-reactjs-app
+sudo rm -rf /home/ec2-user/simple-reactjs-app
 
 
