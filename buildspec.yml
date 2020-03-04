@@ -24,5 +24,7 @@ artifacts:
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
+    - simple-reactjs-app/
+    - simple-reactjs-app
 
     
