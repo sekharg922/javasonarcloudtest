@@ -24,12 +24,5 @@ artifacts:
     - appspec.yml
     - scripts/*
   discard-paths: yes
-  base-directory: /
-  secondary-artifacts:
-    artifactIdentifier:
-      files:
-        - simple-reactjs-app/*
-        - location
-      name: simple-reactjs-app
-      discard-paths: yes
+
     
