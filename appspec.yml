@@ -5,7 +5,7 @@ files:
   - source: /
     destination: /home/ec2-user/server
   - source: /
-    destination: /home/ec2-user/simple-reactjs-app
+    destination: /home/ec2-user/
 
 permissions:
   - object: /
