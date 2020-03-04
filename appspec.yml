@@ -5,6 +5,10 @@ files:
   - source: /
     destination: /home/ec2-user/server
 
+files:
+  - source: /src/simple-reactjs-app
+    destination: /home/ec2-user/web
+
 permissions:
   - object: /
     pattern: "**"
