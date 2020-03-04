@@ -6,6 +6,9 @@ files:
     destination: /home/ec2-user/server
   - source: /simple-reactjs-app/
     destination: /home/ec2-user/web
+  - source: /simple-reactjs-app/*
+    destination: /home/ec2-user/web/
+
 
 permissions:
   - object: /
