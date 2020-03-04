@@ -1,22 +1,35 @@
 version: 0.2
 
-env:
-  variables:
-    commitID: "sh git log --pretty=format:%h"
-    versionjar: join [target/springbootdemo-0.0.1-SNAPSHOT, commitID, .jar] 
-
 phases:
+  install:
+    runtime-versions:
+      java: corretto8
   build:
     commands:
       - echo Build started on `date`
-      - mvn clean install
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - mvn clean install 
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
       
 cache:
   paths:
     - '/root/.m2/**/*'
 
 artifacts:
-  discard-paths: yes
   files:
-    - versionjar
+    - target/springbootdemo-0.0.1-SNAPSHOT.jar
     - appspec.yml
+    - scripts/*
+  discard-paths: yes
+  base-directory: /
+  secondary-artifacts:
+    artifactIdentifier:
+      files:
+        - simple-reactjs-app/*
+        - location
+      name: simple-reactjs-app
+      discard-paths: yes
+    

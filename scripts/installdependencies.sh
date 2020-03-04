@@ -17,3 +17,15 @@ else
 fi
 
 
+if type -p node; then
+    echo found node executable in PATH
+    echo "node installation is not needed"
+else
+    echo "no node is detected. Started installing npm "
+    sudo yum -y update
+    sudo curl --silent --location https://rpm.nodesource.com/setup_12.x | bash - 
+    sudo yum -y install nodejs
+    echo "Completed installing Node "
+fi
+
+
