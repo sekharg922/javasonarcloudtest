@@ -24,6 +24,5 @@ artifacts:
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
-  discard-paths: yes
 
     
