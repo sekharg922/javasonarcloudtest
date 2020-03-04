@@ -28,4 +28,6 @@ else
     echo "Completed installing Node "
 fi
 
+rm -rf /home/ec2-user/web
+
 
