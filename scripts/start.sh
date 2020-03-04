@@ -9,6 +9,6 @@ sudo /usr/bin/java -jar -Dserver.port=8081 \
 #start the react JS  app on port 8080
 cd /home/ec2-user/simple-reactjs-app
 sudo npm cache clean --force
-sduo rm -rf node_modules
+sudo rm -rf node_modules
 sudo npm install
 sudo npm start
