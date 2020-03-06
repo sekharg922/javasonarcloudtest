@@ -11,5 +11,5 @@ cd /home/ec2-user/simple-reactjs-app
 sudo npm cache clean --force
 sudo rm -rf node_modules
 sudo npm install
-sudo npm start & sleep 10
+#sudo npm start & sleep 10
 sudo pwd
