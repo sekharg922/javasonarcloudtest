@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    vargitCommitID: $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
+
 phases:
   install:
     runtime-versions:
@@ -9,6 +13,7 @@ phases:
       - echo Build started on `date`
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
       - echo $SourceVariables.CommitId
+      - echo vargitCommitID
       - mvn clean install 
   # post_build:
   #   commands:
@@ -22,7 +27,7 @@ cache:
 artifacts:
   files:
 #    - target/springbootdemo-0.0.1-SNAPSHOT.jar
-    - [target/springbootdemo-0.0.1-SNAPSHOT, $CODEBUILD_RESOLVED_SOURCE_VERSION, .jar]
+    - target/springbootdemo-0.0.1-SNAPSHOT$(vargitCommitID).jar
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
