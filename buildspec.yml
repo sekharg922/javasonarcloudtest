@@ -17,11 +17,11 @@ phases:
       - export var1=$(echo "hello world" | cut -c -2)
       - echo $var1
       
-      # - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
-      # - echo $var2 
-
-      - export var2=$(echo ($CODEBUILD_RESOLVED_SOURCE_VERSION| cut -c1-8))
+      - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
       - echo $var2 
+
+      - export var3=$(echo $var2 | cut -C1-8)
+      - echo $var3 
       - mvn clean install 
   # post_build:
   #   commands:
@@ -35,7 +35,7 @@ cache:
 artifacts:
   files:
 #    - target/springbootdemo-0.0.1-SNAPSHOT.jar
-    - target/springbootdemo-0.0.1-SNAPSHOT$var2.jar
+    - target/springbootdemo-0.0.1-SNAPSHOT$var3.jar
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
