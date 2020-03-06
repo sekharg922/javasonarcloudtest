@@ -21,8 +21,8 @@ cache:
 
 artifacts:
   files:
-    - target/springbootdemo-0.0.1-SNAPSHOT.jar
-#    - [target/springbootdemo-0.0.1-SNAPSHOT, $SourceVariables.CommitId, .jar]
+#    - target/springbootdemo-0.0.1-SNAPSHOT.jar
+    - [target/springbootdemo-0.0.1-SNAPSHOT, $CODEBUILD_RESOLVED_SOURCE_VERSION, .jar]
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
