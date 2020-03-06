@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 #start the Java service on port 8081
-cd /home/ec2-user/server
+cd /home/ec2-user/server/target
 sudo /usr/bin/java -jar -Dserver.port=8081 \
-    target/*.jar > /dev/null 2> /dev/null < /dev/null &
+    *.jar > /dev/null 2> /dev/null < /dev/null &
 
 
 #start the react JS  app on port 8080
