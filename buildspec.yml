@@ -12,8 +12,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
-      - export variable=$(CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
+  #    - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
+      - export variable=($CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
       - echo $variable
       - mvn clean install 
   # post_build:
