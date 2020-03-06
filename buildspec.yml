@@ -2,8 +2,7 @@ version: 0.2
 
 env:
   variables:
-    vargitCommitID: "initial null"
-    variable: "initla variable null"
+    commitID: "initial null"
 
 phases:
   install:
@@ -12,19 +11,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-  #    - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
-
-     
-      - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c -8)
-      - echo $var2 
-
-      # - export var3=$(echo $var2 | cut -c -8)
-      # - echo $var3 
+      - export commitID=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c -8)
+      - echo $commitID 
       - mvn clean install 
-  # post_build:
-  #   commands:
-  #     - echo Build completed on `date`
-  #     - mvn package
       
 cache:
   paths:
@@ -32,8 +21,7 @@ cache:
 
 artifacts:
   files:
-#    - target/springbootdemo-0.0.1-SNAPSHOT.jar
-    - target/springbootdemo-0.0.1-SNAPSHOT$var3.jar
+    - target/springbootdemo-0.0.1-SNAPSHOT$commitID.jar
     - appspec.yml
     - scripts/*
     - simple-reactjs-app/*
