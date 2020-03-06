@@ -10,10 +10,10 @@ phases:
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
       - echo $SourceVariables.CommitId
       - mvn clean install 
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - mvn package
+  # post_build:
+  #   commands:
+  #     - echo Build completed on `date`
+  #     - mvn package
       
 cache:
   paths:
