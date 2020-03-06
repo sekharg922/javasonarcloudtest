@@ -17,8 +17,11 @@ phases:
       - export var1=$(echo "hello world" | cut -c -2)
       - echo $var1
       
-      - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
-      - echo $var2
+      # - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
+      # - echo $var2 
+
+      - export var2=$(echo ($CODEBUILD_RESOLVED_SOURCE_VERSION)| cut -c1-8)
+      - echo $var2 
       - mvn clean install 
   # post_build:
   #   commands:
