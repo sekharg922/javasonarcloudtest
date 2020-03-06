@@ -14,14 +14,12 @@ phases:
       - echo Build started on `date`
   #    - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
 
-      - export var1=$(echo "hello world" | cut -c -2)
-      - echo $var1
-      
-      - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
+     
+      - export var2=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c -8)
       - echo $var2 
 
-      - export var3=$(echo $var2 | cut -c -8)
-      - echo $var3 
+      # - export var3=$(echo $var2 | cut -c -8)
+      # - echo $var3 
       - mvn clean install 
   # post_build:
   #   commands:
