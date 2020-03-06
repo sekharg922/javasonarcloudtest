@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    vargitCommitID: $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
+    vargitCommitID: $(CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
 
 phases:
   install:
