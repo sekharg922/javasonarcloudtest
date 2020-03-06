@@ -13,7 +13,7 @@ phases:
       - echo Build started on `date`
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8
       - echo $SourceVariables.CommitId
-      - echo vargitCommitID = $(CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
+      - echo vargitCommitID = (CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
       - mvn clean install 
   # post_build:
   #   commands:
